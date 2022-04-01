@@ -46,7 +46,7 @@ const handleLetterResponse = (letter) => {
 	var n = Math.min(letters.indexOf(letter), responses.length - 1);
 	handleNthResponse(n, responses);
 };
-const lettersCodeMap = Object.fromEntries(letters.map((letter) => [letter, () => handleLetterResponse(letter)]));
+const lettersCodeMap = roamsrUserSettings.disabledLetterKeys ? [] : Object.fromEntries(letters.map((letter) => [letter, () => handleLetterResponse(letter)]));
 
 const answerCodeMap = {
 	...digitsCodeMap,
